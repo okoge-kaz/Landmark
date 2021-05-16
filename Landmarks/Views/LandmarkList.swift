@@ -17,9 +17,6 @@ struct LandmarkList: View {
                         LandmarkRow()
                     }
                 )
-                // 構造体を単に、
-                // LandmarkRow()は、LandmarkRow.swiftからとってきている?
-                // destinationがContentView()になっているので、遷移先がContentView.swiftになっている
                 
                 NavigationLink(
                     destination: ContentView(),
@@ -30,13 +27,11 @@ struct LandmarkList: View {
                 
             }
             .navigationTitle("Landmarks")
-            //.navigationBarTitleDisplayMode(.inline)
         }
         
     }
 }
 
-// 以下の文は、Preview画面を表示させるためのもの
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {

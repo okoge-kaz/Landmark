@@ -8,9 +8,6 @@
 import Foundation
 
 struct Landmark: Decodable {
-    // landmarkData.jsonからとってくる
-    // swiftの型に合うようにつくる
-    // Decodableでjsonから変える
     
     let id: Int
     let name: String
