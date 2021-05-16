@@ -11,7 +11,6 @@ struct ContentView: View {
         VStack {
             MapView()
                 .ignoresSafeArea(edges: .top)
-                // ignoreSafeAreaは、iphoneの上のあたりを綺麗に表示するためのもの
                 .frame(height: 300)
 
             CircleImage()
