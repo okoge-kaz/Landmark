@@ -7,64 +7,67 @@
 import SwiftUI
 
 struct ContentView: View {
+    let landmark: Landmark
+    
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinates: landmark.coordinates)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
 
-            CircleImage()
+            CircleImage(imgaeName: landmark.imageName)
                 .offset(y: -130)
                 .padding(.bottom, -130)
 
             VStack(alignment: .leading) {
-                Text("東工大図書館")
+                Text(landmark.name)
                     .font(.title)
 
                 HStack {
-                    Text("東京都目黒区大岡山")
+                    Text(landmark.city)
                         .font(.subheadline)
                     Spacer()
-                    Text("東京工業大学")
+                    Text(landmark.category)
                         .font(.subheadline)
                 }
-
+                
                 Divider()
-
-                Text("詳細情報")
-                    .font(.title2)
+                
                 HStack {
-                    Text("建築主")
-                        .font(.subheadline)
+                    Text("details")
+                        .font(.title2)
                     Spacer()
-                    Text("国立大学法人 東京工業大学")
+                    Text(landmark.park)
                         .font(.subheadline)
                 }
-                HStack {
-                    Text("建築面積")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("1,993.63㎡")
-                        .font(.subheadline)
-                }
-                HStack {
-                    Text("延床面積")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("8,587.88㎡")
-                        .font(.subheadline)
-                }
-            }
-            .padding()
-
+                
+                
+                Text(landmark.description)
+                    .font(.subheadline)
             Spacer()
+                
+            }.padding()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            
+        ContentView(landmark: Landmark(
+            id: 1,
+            name: "Turtle Rock",
+            category: "Rivers",
+            city: "Twentynine Palms",
+            state: "California",
+            isFavorite: true,
+            isFeatured: true,
+            park: "Joshua Tree National Park",
+            description: "",
+            imageName: "turtlerock",
+            coordinates: Coordinate(
+                    longitude: -116.166868,
+                    latitude: 34.011286)
+        ))
+
     }
 }

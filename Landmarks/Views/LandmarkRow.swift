@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct LandmarkRow: View {
-    
+    let landmark: Landmark
     var body: some View {
         HStack {
-            Image("turtlerock")
+            Image(landmark.imageName)
                 .resizable()
                 .frame(width: 50, height: 50)
-            Text("turtle Rock")
+            Text(landmark.name)
 
             Spacer()
         }
     }
 }
 
-// 以下のコードがないと表示がうまくいかない
-struct LandmarkRow_Previews: PreviewProvider {
-    static var previews: some View {
-        LandmarkRow()
-    }
-}
+//// 以下のコードがないと表示がうまくいかない
+//struct LandmarkRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LandmarkRow(
+//            
+//        )
+//    }
+//}
